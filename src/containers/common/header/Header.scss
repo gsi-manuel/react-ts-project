@@ -1,0 +1,19 @@
+@import 'styles';
+
+@include block('header') {
+    background-color: map-get($map: $colors, $key: c-navbar);
+
+    @include element('links') {
+        color: map-get($map: $colors, $key: c-white );
+        text-decoration: none;
+        text-align: center;
+        padding: 14px 0; 
+
+        @include modifier('hover') {
+            &:hover {
+                background-color: #ddd;
+                color: map-get($map: $colors, $key: c-black);
+            }
+        }
+    }
+}

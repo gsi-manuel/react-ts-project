@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import './App.scss';
+import { Header } from './containers/common/header/Header';
+import { Sidebar } from './containers/common/sidebar/Sidebar';
+import { Content } from './containers/common/content/Content';
+import { Footer } from './containers/common/footer/Footer';
 
 export class App extends Component {
   render() {
     return(
       <div>
+        <Header/>
         <div className="row">
-          <div className="row-col-6 color-1">1-REACT + TYPESCRIPT!!!</div>
-          <div className="row-col-6 color-2">2-REACT + TYPESCRIPT!!!</div>
+          <Sidebar/>
+          <Content/>
         </div>
-        <div className="row">
-          <div className="row-col-9 color-3">3-REACT + TYPESCRIPT!!!</div>
-          <div className="row-col-3 color-4">4-REACT + TYPESCRIPT!!!</div>
-        </div>
+        <Footer/>
       </div>
     );
   }

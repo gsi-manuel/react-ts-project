@@ -52,8 +52,9 @@
     max-width: $medium-screen * 1px;
     margin: 0 auto;
     @include element('fluid') {
-      margin: 0;
-      max-width: 100%;
+        margin: 0;
+        max-width: 100%;
+        font-family: 'open sans', Helvetica, Arial, sans-serif;
     }
 }
 
