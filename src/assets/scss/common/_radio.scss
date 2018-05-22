@@ -1,0 +1,68 @@
+$color1: #f4f4f4;
+
+@include block('radio') {
+    input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        + .radio-label {
+            &:before {
+                content: '';
+                background: $color1;
+                border-radius: 100%;
+                border: 2px solid silver;
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                position: relative;
+                margin-right: 5px;
+                vertical-align: sub;
+                cursor: pointer;
+                text-align: center;
+            }
+        }
+
+        &:checked {
+            + .radio-label {
+                &:before {
+                background-color: map_get($colors, c-darkBlue);
+                border: 2px solid map_get($colors, c-darkBlue);
+                box-shadow: inset 0 0 0 3px $color1;
+                }
+            }
+        }
+        &:focus {
+            + .radio-label {
+                &:before {
+                outline: none;
+                border-color: map_get($colors, c-darkBlue);
+                }
+            }
+        }
+        &:disabled {
+            + .radio-label {
+                &:before {
+                box-shadow: inset 0 0 0 3px $color1;
+                border-color: darken($color1, 25%);
+                background: darken($color1, 25%);
+                }
+            }
+        }
+        + .radio-label {
+            &:empty {
+                &:before {
+                margin-right: 0;
+                }
+            }
+        }
+
+        @include modifier('label-space') {
+            input[type="radio"] {
+                + .radio-label {
+                    &::before {
+                    margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

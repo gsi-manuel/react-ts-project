@@ -1,11 +1,16 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
+// const webpackDashboard = require("webpack-dashboard/plugin");
 const path = require('path');
 
 const HOST = process.env.HOST || '127.0.0.1';
 const PORT = process.env.PORT || '9000';
 
 module.exports = {
+  // entry: {
+  //   index: 'src/index.html',
+  // },
   resolve: {
     extensions: [".tsx", ".ts", ".js"]
   },
@@ -45,16 +50,24 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.(png|jpe?g|gif|ico|svg)$/,
+        loader: 'file-loader?name=static/media/[name].[hash:8].[ext]'
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)$/,
         use: [
           {
             loader: 'url-loader',
             options: {
-              limit: 10000
+              limit: 10000,
+              name: 'static/media/[name].[hash:8].[ext]',
             }
           }
-
         ]
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader?name=static/media/[name].[hash:8].[ext]'
       },
       {
         test: /\.scss$/,
@@ -76,10 +89,11 @@ module.exports = {
             }
           }
         ]
-      }
+      },
     ]
   },
   plugins: [
+    // new webpackDashboard(),
     new HtmlWebPackPlugin({
       template: "src/index.html",
       filename: "./index.html"
@@ -87,6 +101,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
-    })
-  ]
+    }),
+  ],
+  output: {
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
+    // path: path.resolve(__dirname, 'dist')
+  }
 };

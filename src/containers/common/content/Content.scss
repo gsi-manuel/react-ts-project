@@ -1,0 +1,7 @@
+@import 'styles';
+
+@include block('main-content') {
+    min-height: 500px;
+    padding: 15px;
+    background-color: #f3f3f3;
+}

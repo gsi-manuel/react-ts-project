@@ -1,13 +1,21 @@
 @import 'styles';
 
 @include block('header') {
-    background-color: map-get($map: $colors, $key: c-navbar);
+    background-color: map-get($map: $colors, $key: c-darkBlue);
+    text-transform: uppercase;
+
+    @include element('logo') {
+        max-width: 60px;
+        animation: logo-spin infinite 20s linear;
+    }
 
     @include element('links') {
         color: map-get($map: $colors, $key: c-white );
         text-decoration: none;
         text-align: center;
-        padding: 14px 0; 
+        padding: 14px 0;
+        font-size: 13px;
+        font-weight: bold;
 
         @include modifier('hover') {
             &:hover {
@@ -17,3 +25,9 @@
         }
     }
 }
+
+@keyframes logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
