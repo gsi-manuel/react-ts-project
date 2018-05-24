@@ -1,7 +1,8 @@
 # react-ts-project
 React, Sass, Webpack 4, Jest, Router 4 from scratch
 
-This application is to have a base of elements necessary to start a new project with React. It is based on:
+This application is to have a base of elements necessary to start a new project with React. It is under build, if you wish to collaborate you will be welcome.
+
 - React 16.3 [React Pages](https://reactjs.org/).
 - Router 4 [Router Pages](https://reacttraining.com/react-router/).
 - Mobx 4 [Mobx Pages](https://mobx.js.org/).
