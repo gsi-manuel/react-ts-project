@@ -14,16 +14,16 @@ export class Table extends React.Component {
                 </div>                    
                 <div className="table__row row">
                     <div className="row-col-1"><span>1</span></div>
-                    <div className="row-col-3">Yoan Manuel</div>
-                    <div className="row-col-3">Sancti Spiritus</div>
-                    <div className="row-col-3">85022515842</div>
+                    <div className="row-col-3">John Doe</div>
+                    <div className="row-col-3">Marte</div>
+                    <div className="row-col-3">4645656454</div>
                     <div className="row-col-2">actions</div>
                 </div>                  
                 <div className="table__row row">
                     <div className="row-col-1"><span>2</span></div>
-                    <div className="row-col-3">Lissa Curbelo</div>
-                    <div className="row-col-3">Mayabeque</div>
-                    <div className="row-col-3">85022515842</div>
+                    <div className="row-col-3">Jane Doe</div>
+                    <div className="row-col-3">Venus</div>
+                    <div className="row-col-3">dsfds</div>
                     <div className="row-col-2">ACTIONS</div>
                 </div>                   
             </div>

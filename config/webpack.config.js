@@ -1,7 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
-// const webpackDashboard = require("webpack-dashboard/plugin");
 const path = require('path');
 
 const HOST = process.env.HOST || '127.0.0.1';
@@ -13,6 +12,11 @@ module.exports = {
   // },
   resolve: {
     extensions: [".tsx", ".ts", ".js"]
+  },
+  devServer: {
+    hot: true,
+    port: PORT,
+    historyApiFallback: true
   },
   optimization: {
 		splitChunks: {
@@ -51,7 +55,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|ico|svg)$/,
-        loader: 'file-loader?name=static/media/[name].[hash:8].[ext]'
+        loader: 'file-loader?name=assets/images/[name].[hash:8].[ext]'
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
@@ -72,6 +76,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
+          'css-hot-loader',
           MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
@@ -102,6 +107,8 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   output: {
     filename: '[name].bundle.js',

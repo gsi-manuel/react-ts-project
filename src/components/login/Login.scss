@@ -1,0 +1,48 @@
+@import 'styles';
+
+@include block('login-box') {
+  background-color: map-get($map: $colors, $key: c-darkBlue );
+  border: 3px solid map-get($map: $colors, $key: c-darkBlue );
+
+  /* Center the avatar image inside this container */
+  @include element('imgcontainer') {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+
+  @include element('avatar') {
+    width: 40%;
+    border-radius: 50%;
+  }
+
+  /* Add padding to containers */
+  @include element('container') {
+    padding: 16px;
+  }
+
+  /* Full-width inputs */
+  @include element('inputs') {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  @include element('button-submit') {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 20px;
+  }
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}

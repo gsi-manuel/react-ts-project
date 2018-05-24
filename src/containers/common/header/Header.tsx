@@ -15,22 +15,22 @@ export class Header extends Component {
                         <div className="row-col-5 logo"/>
                         <div className="row-col-6">
                             <div className="row" id="main-menu">                                
-                                <Link className="row-col-2 header__links header__links--hover" to="/">
+                                <Link className="row-col-4 header__links header__links--hover" to="/">
                                     <i className="fas fa-chart-line"/>   DASHBOARD
                                 </Link>
                                  
-                                <a className="row-col-3 header__links header__links--hover" href="#">
+                                <a className="row-col-2 header__links header__links--hover" href="#">
                                     <i className="fas fa-user"/>   users
                                 </a>
                                 <a className="row-col-3 header__links header__links--hover" href="#">
                                 <i className="fas fa-spinner fa-pulse"/>   Spinner
                                 </a>
-                                <Link className="row-col-3 header__links header__links--hover" to="/radio">
+                                <Link className="row-col-2 header__links header__links--hover" to="/radio">
                                     <i className="fas fa-robot"/>   radio
                                 </Link>
-                                <a className="row-col-1 header__links header__links--hover" href="#">
+                                <Link className="row-col-1 header__links header__links--hover" to="/login">
                                     <i className="fas fa-power-off"/>
-                                </a>
+                                </Link>
                                                              
                             </div>
                         </div>

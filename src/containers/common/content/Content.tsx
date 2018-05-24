@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import './Content.scss';
 import { Table } from '../../../components/table/Table';
 import { Radio } from '../../../components/radio/Radio';
+import { Login } from '../../../components/login/Login';
 
 interface IState {
     name: string;
@@ -25,6 +26,7 @@ export class Content extends React.Component <any, IState> {
                     <Switch>
                         <Route exact={true} path="/" component={Table}/>
                         <Route path="/radio" component={Radio}/>
+                        <Route path="/login" component={Login}/>
                     </Switch> 
                 </div>
             </div>
