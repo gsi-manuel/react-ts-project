@@ -12,4 +12,4 @@ This application is to have a base of elements necessary to start a new project 
 - Fontawesome 5 [Fontawesome Pages](https://fontawesome.com/).
 
 
-Just run *yarn install* and *yarn start*, then go to localhost:9000 to start developing. To build, run yarn run build.
+Just run *yarn install* and *yarn start*, then go to localhost:9000 to start developing. To build, run y*arn run build*.
