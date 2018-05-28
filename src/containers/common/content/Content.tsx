@@ -4,6 +4,7 @@ import './Content.scss';
 import { Table } from '../../../components/table/Table';
 import { Radio } from '../../../components/radio/Radio';
 import { Login } from '../../../components/login/Login';
+import { Toggle } from '../../../components/toggle/Toggle';
 
 interface IState {
     name: string;
@@ -27,6 +28,7 @@ export class Content extends React.Component <any, IState> {
                         <Route exact={true} path="/" component={Table}/>
                         <Route path="/radio" component={Radio}/>
                         <Route path="/login" component={Login}/>
+                        <Route path="/toggle" component={Toggle}/>
                     </Switch> 
                 </div>
             </div>

@@ -51,9 +51,9 @@ export class Header extends Component {
                                 <a className="row-col-2 header__links header__links--hover" href="#">
                                     <i className="fas fa-user"/>   users
                                 </a>
-                                <a className="row-col-3 header__links header__links--hover" href="#">
-                                <i className="fas fa-spinner fa-pulse"/>   Spinner
-                                </a>
+                                <Link className="row-col-3 header__links header__links--hover" to="/toggle">
+                                    <i className="fas fa-spinner fa-pulse"/>   Toggle
+                                </Link>
                                 <Link className="row-col-2 header__links header__links--hover" to="/radio">
                                     <i className="fas fa-robot"/>   radio
                                 </Link>

@@ -31,7 +31,7 @@
   }
 
   @include element('button-submit') {
-    background-color: #4CAF50;
+    background-color: map-get($map: $colors, $key: c-success );
     color: white;
     padding: 14px 20px;
     margin: 8px 0;

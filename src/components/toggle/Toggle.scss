@@ -1,0 +1,84 @@
+@import 'styles';
+
+@include block('toggle') {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 21px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-left: 5px;
+
+    @include element('on') {
+        line-height: 21px;
+        margin-left: 5px;
+        display: none;
+    }
+
+    @include element('off') {
+        line-height: 21px;
+        margin-left: 21px;
+    }
+
+    @include element('slider') {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+        box-shadow: inset 0 0 20px rgba(4, 4, 4, 0.2);
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 15px;
+            width: 15px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+            box-shadow: inset 0 0 1px rgba(4, 4, 4, 0.6);
+        }
+
+        // @include modifier('danger') {
+        //     input:checked+.toggle__slider {
+        //         background-color: #26AA73;
+        //     }       
+        // }
+    }
+
+    input:checked+.toggle__slider {
+        background-color: map-get($map: $colors, $key: c-darkBlue );
+    }
+
+    input:checked+.toggle__slider--danger {
+        background-color: map-get($map: $colors, $key: c-danger );
+    }
+
+    input:checked+.toggle__slider--success {
+        background-color: map-get($map: $colors, $key: c-success );
+    }
+    
+    input:checked+.toggle__slider .toggle__off {
+        display: none;
+    }
+    
+    input:checked+.toggle__slider .toggle__on {
+        display: inline-block;
+    }
+    
+    input:focus + .toggle__slider {
+        box-shadow: 0 0 1px #26AA73;
+    }
+    
+    input:checked+.toggle__slider:before {
+        transform: translateX(26px);
+    }
+}

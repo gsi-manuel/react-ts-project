@@ -1,12 +1,23 @@
 import * as React from 'react';
 
-export class Radio extends React.Component {
+interface IRadio {
+    checked: boolean;
+}
+export class Radio extends React.Component <{}, IRadio> {
+
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            checked: true
+        };
+    }
     
     render() {
         return (
             <div>
                 <div className="radio">
-                    <input id="radio-1" name="radio" type="radio" checked={true}/>
+                    <input id="radio-1" name="radio" type="radio" defaultChecked={true}/>
                     <label htmlFor="radio-1" className="radio-label">Checked</label>
                 </div>
                 <div className="radio">

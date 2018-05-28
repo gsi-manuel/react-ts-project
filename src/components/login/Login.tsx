@@ -33,7 +33,7 @@ export class Login extends Component {
 
                             <button className="login-box__button-submit" type="submit">Login</button>
                             <label>
-                                <input type="checkbox" checked={true} name="remember" /> Remember me
+                                <input type="checkbox" defaultChecked={true} name="remember" /> Remember me
                             </label>
                         </div>
                     </form>
