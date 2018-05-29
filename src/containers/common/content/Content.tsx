@@ -6,20 +6,8 @@ import { Radio } from '../../../components/radio/Radio';
 import { Login } from '../../../components/login/Login';
 import { Toggle } from '../../../components/toggle/Toggle';
 
-interface IState {
-    name: string;
-}
+export class Content extends React.Component {
 
-export class Content extends React.Component <any, IState> {
-    constructor(props: any) {
-        super(props);
-        this.state = { name: 'Bruce' };
-    }
-    
-    change(event: any) {
-        this.setState({ name: event.target.value });
-    }
-    
     render() {
         return (
             <div className="row-col-9">

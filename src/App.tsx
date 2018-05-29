@@ -12,6 +12,7 @@ import { Content } from './containers/common/content/Content';
 import { Footer } from './containers/common/footer/Footer';
 
 export class App extends Component {
+
   render() {
     return(
       <div>
