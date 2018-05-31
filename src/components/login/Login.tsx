@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Login.scss';
 
-const logo = require('../../assets/images/User_login_man_profile_account.ico');
+const logo = require('../../assets/images/User_login_man_profile_account.png');
 
 export class Login extends Component {
     render() {

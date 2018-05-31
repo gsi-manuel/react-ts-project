@@ -54,27 +54,19 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(png|jpe?g|gif|ico|svg)$/,
-        loader: 'file-loader?name=assets/images/[name].[hash:8].[ext]'
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
+        test: /\.(png|jpe?g|gif|svg|ico)$/,
         use: [
           {
             loader: 'url-loader',
             options: {
               limit: 10000,
-              name: 'static/media/[name].[hash:8].[ext]',
+              name: 'assets/images/[name].[hash:8].[ext]',
             }
           },
           {
             loader: 'img-loader'
           }
         ]
-      },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=static/media/[name].[hash:8].[ext]'
       },
       {
         test: /\.scss$/,

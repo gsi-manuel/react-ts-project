@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
 
-const logo = require('../../../assets/images/512px-React-icon.svg.ico');
+const logo = require('../../../assets/images/logo.svg');
 export class Header extends Component {
 
     constructor(props: any) {
