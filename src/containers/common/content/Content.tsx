@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './Content.scss';
-import { Table } from '../../../components/table/Table';
-import { Radio } from '../../../components/radio/Radio';
-import { Login } from '../../../components/login/Login';
-import { Toggle } from '../../../components/toggle/Toggle';
+import { Table } from '../../../components/common/table/Table';
+import { Radio } from '../../../components/common/radio/Radio';
+import { Login } from '../../../components/common/login/Login';
+import { Toggle } from '../../../components/common/toggle/Toggle';
 
 export class Content extends React.Component {
 

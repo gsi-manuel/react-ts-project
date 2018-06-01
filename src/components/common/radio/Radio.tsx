@@ -1,6 +1,6 @@
 import * as React from 'react';
 import axios from 'axios';
-import { Spinner } from '../../components/common/spinner/Spinner';
+import { Spinner } from '../../../components/common/spinner/Spinner';
 interface IRadio {
     checked: boolean;
     username: string;

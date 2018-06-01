@@ -12,5 +12,7 @@ This application is to have a base of elements necessary to start a new project 
 - Sass [Sass Pages](https://sass-lang.com/).
 - Fontawesome 5 [Fontawesome Pages](https://fontawesome.com/).
 
+## Create any components
+Reusable components can be created in other projects
 
 Just run *yarn install* and *yarn start*, then go to localhost:9000 to start developing. To build, run y*arn run build*.
