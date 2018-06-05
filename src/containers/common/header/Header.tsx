@@ -48,9 +48,17 @@ export class Header extends Component {
                                 <Link className="row-col-4 header__links header__links--hover" to="/">
                                     <i className="fas fa-chart-line"/>   DASHBOARD
                                 </Link>                                 
-                                <a className="row-col-2 header__links header__links--hover" href="#">
-                                    <i className="fas fa-user"/>   users
-                                </a>
+                                <div className="dropdown row-col-2 header__links header__links--hover">
+                                    <span>Mouse over me</span>
+                                    <div className="dropdown-content">
+                                        <Link to="/toggle">
+                                            <i className="fas fa-spinner fa-pulse"/>   Toggle
+                                        </Link>
+                                        <Link to="/">
+                                            <i className="fas fa-spinner fa-pulse"/>   TABLE
+                                        </Link>
+                                    </div>
+                                </div>
                                 <Link className="row-col-3 header__links header__links--hover" to="/toggle">
                                     <i className="fas fa-spinner fa-pulse"/>   Toggle
                                 </Link>
