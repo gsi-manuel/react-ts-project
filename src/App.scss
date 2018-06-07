@@ -1,5 +1,15 @@
 @import 'styles';
 
+@include block('flex-class') {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @include element('element') {
+    flex: 1;
+  }
+}
+
 .color-1 {
   background: map-get($map: $colors, $key: c-danger);
 }

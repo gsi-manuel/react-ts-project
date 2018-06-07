@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { RiftLink } from 'rift-router';
 import './Header.scss';
 
 const logo = require('../../../assets/images/logo.svg');
@@ -27,9 +27,9 @@ export class Header extends Component {
                         <div className="row-col-2">
                             <div className="row">
                                 <div className="header__container-logo">
-                                    <Link to="/">
+                                    <RiftLink to="/">
                                         <img src={logo} className="header__logo" alt="logo" />
-                                    </Link>
+                                    </RiftLink>
                                 </div>
                                 <div className="header__container-icon">
                                     <a 
@@ -45,29 +45,29 @@ export class Header extends Component {
                         <div className="row-col-4 logo"/>
                         <div className="row-col-6">
                             <div className="row header__topnav" id="main-menu">                                
-                                <Link className="row-col-4 header__links header__links--hover" to="/">
+                                <RiftLink className="row-col-4 header__links header__links--hover" to="/">
                                     <i className="fas fa-chart-line"/>   DASHBOARD
-                                </Link>                                 
+                                </RiftLink>                                 
                                 <div className="dropdown row-col-2 header__links header__links--hover">
                                     <span>Mouse over me</span>
                                     <div className="dropdown-content">
-                                        <Link to="/toggle">
+                                        <RiftLink to="/toggle">
                                             <i className="fas fa-spinner fa-pulse"/>   Toggle
-                                        </Link>
-                                        <Link to="/">
+                                        </RiftLink>
+                                        <RiftLink to="/">
                                             <i className="fas fa-spinner fa-pulse"/>   TABLE
-                                        </Link>
+                                        </RiftLink>
                                     </div>
                                 </div>
-                                <Link className="row-col-3 header__links header__links--hover" to="/toggle">
+                                <RiftLink className="row-col-3 header__links header__links--hover" to="/toggle">
                                     <i className="fas fa-spinner fa-pulse"/>   Toggle
-                                </Link>
-                                <Link className="row-col-2 header__links header__links--hover" to="/radio">
+                                </RiftLink>
+                                <RiftLink className="row-col-2 header__links header__links--hover" to="/radio">
                                     <i className="fas fa-robot"/>   radio
-                                </Link>
-                                <Link className="row-col-1 header__links header__links--hover" to="/login">
+                                </RiftLink>
+                                <RiftLink className="row-col-1 header__links header__links--hover" to="/login">
                                     <i className="fas fa-power-off"/>
-                                </Link>                                                             
+                                </RiftLink>                                                             
                             </div>
                         </div>
                     </div>

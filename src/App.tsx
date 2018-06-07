@@ -15,9 +15,9 @@ export class App extends Component {
 
   render() {
     return(
-      <div>
+      <div className="flex-class">
         <Header/>
-        <div className="row">
+        <div className="row flex-class__element">
           <Sidebar/>
           <Content/>
         </div>

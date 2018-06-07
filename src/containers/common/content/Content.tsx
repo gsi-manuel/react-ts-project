@@ -1,10 +1,6 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { RiftGate } from 'rift-router';
 import './Content.scss';
-import { Table } from '../../../components/common/table/Table';
-import { Radio } from '../../../components/common/radio/Radio';
-import { Login } from '../../../components/common/login/Login';
-import { Toggle } from '../../../components/common/toggle/Toggle';
 
 export class Content extends React.Component {
 
@@ -12,12 +8,7 @@ export class Content extends React.Component {
         return (
             <div className="row-col-9">
                 <div className="main-content">
-                    <Switch>
-                        <Route exact={true} path="/" component={Table}/>
-                        <Route path="/radio" component={Radio}/>
-                        <Route path="/login" component={Login}/>
-                        <Route path="/toggle" component={Toggle}/>
-                    </Switch> 
+                    <RiftGate/>
                 </div>
             </div>
         );

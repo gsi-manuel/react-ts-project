@@ -1,24 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'mobx-react';
+import router from './routes/routes';
 import App from './App';
 
-// ReactDOM.render(
-//     <BrowserRouter> 
-//         <App />
-//     </BrowserRouter>,
-//     document.getElementById('root')
-// );
+const stores = {
+    router: router
+};
 
 const renderApp = (A: React.ComponentClass) => {
     ReactDOM.render(
-        <BrowserRouter>
+        <Provider {...stores}>
             <A />
-        </BrowserRouter>, 
+        </Provider>, 
         document.getElementById('root'));
 };
 
-// const ro = document.getElementById('root');
 renderApp( App);
 
 if ((module as any).hot) {

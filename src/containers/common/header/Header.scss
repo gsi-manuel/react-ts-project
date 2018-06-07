@@ -44,7 +44,7 @@
 }
 
 @media screen and (max-width: 479px) {
-  .header__topnav a {display: none;}
+  .header__topnav a, .header__topnav .dropdown {display: none;}
   .header__container-icon a.header__icon {
     float: right;
     display: block;
@@ -52,7 +52,8 @@
     right: 7px;
     top: 0;
   }
-  .header__topnav.responsive a {
+  .header__topnav.responsive a,
+  .header__topnav.responsive .dropdown {
     float: none;
     display: block;
     text-align: left;
