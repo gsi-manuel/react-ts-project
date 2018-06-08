@@ -1,4 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 const path = require('path');
@@ -16,10 +19,11 @@ module.exports = {
   devServer: {
     hot: true,
     port: PORT,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   optimization: {
 		splitChunks: {
+      chunks: 'all',
 			cacheGroups: {
 				commons: {
 					chunks: "initial",
@@ -89,7 +93,7 @@ module.exports = {
             }
           }
         ]
-      },
+      }
     ]
   },
   plugins: [
@@ -97,6 +101,37 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "src/index.html",
       filename: "./index.html"
+    }),
+    new WebpackPwaManifest({
+      name: 'My Progressive Web App',
+      short_name: 'MyPWA',
+      description: 'My awesome Progressive Web App!',
+      theme_color: '#0f395a',
+      background_color: '#ffffff',
+      icons: [
+        {
+          src: path.resolve('src/assets/images/favicon.ico'),
+          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+        },
+        // {
+        //   src: path.resolve('src/assets/large-icon.png'),
+        //   size: '1024x1024' // you can also use the specifications pattern
+        // }
+      ]
+    }),
+    new WorkboxPlugin.GenerateSW({
+      // these options encourage the ServiceWorkers to get in there fast 
+      // and not allow any straggling "old" SWs to hang around
+      clientsClaim: true,
+      skipWaiting: true
+    }),
+    new CompressionPlugin({ 
+      asset: '[path].gz[query]',
+      algorithm: "gzip",
+      test: /\.tsx$|\.ts$|\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8,
+      // deleteOriginalAssets: true
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Progresive Web App React.">
     <link rel="shortcut icon" href="../src/assets/images/favicon.ico">
     <title>Webpack</title>
 </head>
@@ -12,6 +13,18 @@
     </noscript>
     <div class="container container__fluid">
       <div id="root" style="height: 100%;"></div>
+      <script>
+        // Check that service workers are registered
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js').then(registration => {
+              console.log('SW registered: ', registration);
+            }).catch(registrationError => {
+              console.log('SW registration failed: ', registrationError);
+            });
+          });
+        }
+      </script>
     </div>
   </body>
 </html>

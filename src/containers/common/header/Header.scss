@@ -6,6 +6,7 @@
 
   @include element('container-logo') {
     flex-basis: 91%;
+    cursor: pointer;
   }
 
   @include element('container-icon') {
@@ -28,6 +29,7 @@
     padding: 14px 0;
     font-size: 13px;
     font-weight: bold;
+    cursor: pointer;
 
     @include modifier('hover') {
       &:hover {
@@ -44,7 +46,7 @@
 }
 
 @media screen and (max-width: 479px) {
-  .header__topnav a, .header__topnav .dropdown {display: none;}
+  .header__topnav span, .header__topnav .dropdown {display: none;}
   .header__container-icon a.header__icon {
     float: right;
     display: block;
@@ -79,7 +81,6 @@
     display: block;
     color: map-get($map: $colors, $key: c-black );
     text-decoration: none;
-    // padding: 14px 0;
     font-size: 13px;
     font-weight: bold;
   }
