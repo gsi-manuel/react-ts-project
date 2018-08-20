@@ -15,7 +15,7 @@
       <div id="root" style="height: 100%;"></div>
       <script>
         // Check that service workers are registered
-        if ('serviceWorker' in navigator) {
+        // if ('serviceWorker' in navigator) {
           window.addEventListener('load', () => {
             navigator.serviceWorker.register('/service-worker.js').then(registration => {
               console.log('SW registered: ', registration);
@@ -23,7 +23,7 @@
               console.log('SW registration failed: ', registrationError);
             });
           });
-        }
+        // }
       </script>
     </div>
   </body>

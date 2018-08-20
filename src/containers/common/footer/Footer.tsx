@@ -4,8 +4,8 @@ import './Footer.scss';
 export class Footer extends Component {
     render() {
         return (
-            <div className="row">
-                <div className="row-col-12 color-4">
+            <div className="row footer">
+                <div className="row-col-12">
                     Footer
                 </div>
             </div>

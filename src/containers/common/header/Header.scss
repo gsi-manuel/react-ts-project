@@ -46,7 +46,7 @@
 }
 
 @media screen and (max-width: 479px) {
-  .header__topnav span, 
+  .header__topnav span, // because RiftLink generate span
   .header__topnav .dropdown {display: none;}
   .header__container-icon a.header__icon {
     float: right;
@@ -55,7 +55,7 @@
     right: 7px;
     top: 0;
   }
-  .header__topnav.responsive span,
+  .header__topnav.responsive span, // because RiftLink generate span
   .header__topnav.responsive .dropdown {
     float: none;
     display: block;
@@ -78,7 +78,7 @@
   z-index: 1;
   text-align: left;
 
-  a {
+  span { // because RiftLink generate span
     display: block;
     color: map-get($map: $colors, $key: c-black );
     text-decoration: none;
